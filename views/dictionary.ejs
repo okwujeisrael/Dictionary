@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i&display=swap" rel="stylesheet">
+  <title>Dictionary</title>
+</head>
+
+<body>
+  <div class="box">
+    <form action = "/" method = "POST">
+    <div class="vocab-box">
+      <input type="text" name="word"  placeholder="Enter a word" autocomplete = "off">
+    </div>
+    <button type="submit" name="submit">Merriam Webster</button>
+    </form>
+
+    <div class="results">
+      <% if ( word !== "" || partOfSpeech !== "" ||  transcription !== "" || definition !== "") {%>
+      <p class = "vocabulary"><%= word %><%= partOfSpeech %></p>
+      <p class = "transcription"><%= transcription %></p>
+      <p class = "definition"><%= definition %></p>
+      <% } %>
+
+      <p class = "error-message"><%= notAWord %></p>
+
+
+    </div>
+  </div>
+
+<script type="text/javascript"  src="index.js">
+
+</script>
+
+</body>
+</html>
